@@ -53,7 +53,7 @@ public:
     }
     
     int get_element(int index) {
-        if (index < capacity_) {
+        if (index < size_ && index >= 0) {
             return arr_[index];
         } else {
             throw WrongIndex();
@@ -74,7 +74,7 @@ int main(int argc, const char * argv[]) {
         arr.add_element(155);
         arr.add_element(14);
         arr.add_element(15);
-        std::cout << arr.get_element(7) << std::endl;
+        std::cout << arr.get_element(0) << std::endl;
     }
     catch (const WrongIndex& e) {
         std::cout << e.what() << "\n";
